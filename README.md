@@ -130,6 +130,6 @@ Lastly, and if all of the above fail, you'll be required to use Selenium as your
 
 **Raw API Requests**
 
-(https://drive.google.com/file/d/1GEvknaWg2nsI0yznuZDCpbZM_EYWWea1/view)[Trawling for an API endpoint]
+[https://drive.google.com/file/d/1GEvknaWg2nsI0yznuZDCpbZM_EYWWea1/view](Trawling for an API endpoint)
 
 TODO: add comments to the scrapers on functionality.
