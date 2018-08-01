@@ -31,7 +31,7 @@ Wikipedia lists the different types of scraping as:
   **HTML parsing**
   Many websites have large collections of pages generated dynamically from an underlying structured source like a database.
   Data of the same category are typically encoded into similar pages by a common script or template.
-  In data mining, a program that detects such templates in a particular information source, extracts its content and translates it into a relational form, is called a wrapper. 
+  In data mining, a program that detects such templates in a particular information source, extracts its content and translates it into a relational form, is called a wrapper.
   Wrapper generation algorithms assume that input pages of a wrapper induction system conform to a common template and that they can be easily identified in terms of a URL common scheme.
   Moreover, some semi-structured data query languages, such as XQuery and the HTQL, can be used to parse HTML pages and to retrieve and transform page content.
 
@@ -59,7 +59,7 @@ Wikipedia lists the different types of scraping as:
 
   That's a pretty long list of types of scrapers to choose from, luckily we'll be focusing on three types of scraping for this tutorial.
 
-# What we will be using
+# What We Will be Using
 
 **Raw API Requests**
 
@@ -77,7 +77,8 @@ These requests usually come in two main formats:
       First, the network tab must be used to find a request made to the API you are trying to query.
       From there you can check grab the url, request headers, and form data.
       Lastly, you must use the `requests` library to structure your request in a way that will be accepted by the API.
-      Sounds tedious, luckily the Postman app has made this process a breeze. Check the screencast below to see a video example of how this works.
+      Sounds tedious, thankfully the Postman app has made this process a breeze. Check the screencast in the videos section to see an example of how this works.
+      A full scraper can be found in `./scraper_examples/advanced_auto_parts_scraper.py`
 
 **Parsing Content with BeautifulSoup**
 
@@ -100,5 +101,33 @@ Regardless of which way we are using this method we rely on the BeautifulSoup li
 
 **Selenium**
 
+The award for trickiest and most work intensive method of scraping we use has to be awarded to Selenium.
+This method uses an actual browser to load the webpage which we can then query for specific elements which we can then use to get
+valuable information such as the text content or `href`.
+
+Some reasons behind Selenium's learning curve:
+  1.) Selenium requires a more in-depth set up than the previous two methods, depending on whether you're using Chrome or Firefox you will either need to have both the path
+      to your Chrome bin file and Chromedriver(more information here: http://chromedriver.chromium.org/) or the Firefox app itself.
+  2.) The use of a browser opens us up to many more possible failure types than simple API request and response parsing method.
+      Errors include not being able to locate the element you're looking for, a website taking too long to load and causing your request to timeout, and
+      a modal on the page causing the page to become non-interactive until the modal is closed.
+  3.) All of the above errors will require some logic coded into your scraper to handle and these checks can cause a large increase in dev time.
+
+An example of this can be found in `./scrapers/tj_maxx_scraper`
+
+# When to Use What
+
+In my experience it is always best to time box ten to twenty minutes before implementing a scraper to test out the website.
+What this means is that you should manually go through the steps you wish to have your scraper emulate. Not only will this give you
+a better understanding of what it is you need to do but you can also monitor the network tab of the dev tools to see if there are any usable API requests.
+
+The above list of scrapers is in descending order in regards to ease of implementation so if you can find a way to scrape the information you need with
+a simple API request you'll save yourself over an hour of dev time at the very least.
+The second thing you'll want to look for is a static webpage because we can pass this as an argument to BeautifulSoup and requires much less work to implement in comparison to Selenium.
+Lastly, and if all of the above fail, you'll be required to use Selenium as your scraper. Check the videos section for an examples on how this all works.
+
+# Videos
+
+**Raw API Requests**
 
 TODO: add comments to the scrapers on functionality.
