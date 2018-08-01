@@ -1,0 +1,5 @@
+export DEBUG="Ok"
+export APP_HOST="*"
+export FRONTEND_APP_HOST="*"
+export DATABASE_URL="postgres://postgres:postgres@localhost:5432/finhance_db"  # format postgres://USER:PASSWORD@HOST:PORT/NAME
+export SECRET_KEY=")o^)hz(mfo^6sg-8)%7rbjez$l4ti8oc0q=@mp$p-rx80nxoqy"
