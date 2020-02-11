@@ -1,4 +1,4 @@
-Django==2.0.6
+Django==2.2.10
 Unipath==1.1
 dj-database-url==0.4.1
 django-cors-headers==1.2.2
