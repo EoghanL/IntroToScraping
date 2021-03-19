@@ -9,7 +9,7 @@ django-suit==0.2.26
 python-dotenv==0.6.0
 gunicorn==19.6.0
 django-naomi==0.8
-djangorestframework==3.8.2
+djangorestframework==3.11.2
 django-rq==1.1.0
 click==6.6
 rq==0.6.0
