@@ -24,7 +24,7 @@ pyzipcode3==2.2
 redis==2.10.6
 requests==2.18.4
 sure==1.4.9
-urllib3==1.22
+urllib3==1.26.5
 usaddress==0.5.10
 yelpapi==2.2.2
 beautifulsoup4==4.6.0
